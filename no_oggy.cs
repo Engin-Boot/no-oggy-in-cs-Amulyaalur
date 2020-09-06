@@ -20,7 +20,7 @@ class NoOggyChecker
   static int Main()
   {
     var names = new List<string>
-      { "nobita", "bheem", "oggy", "oggy cockroach", "ninja" };
+      { "nobita", "bheem", "oggy", "oggy cockroach", "ninja oggy" };
     RemoveOggy(names);
     if(OggyIsRemoved(names)) {
       Console.WriteLine("Passed!");

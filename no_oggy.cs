@@ -1,34 +1,38 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 class NoOggyChecker
 {
-  static void RemoveOggy(List<string> names)
-  {
-    foreach (var name in names.ToList())
+    static void RemoveOggy(List<string> names)
     {
-        if(name.StartsWith("oggy")) {
-            Console.WriteLine($"Need to remove {name}!");
-            names.Remove(name);
+        List<string> Names = new List<string>(names);
+        foreach (var name in Names)
+        {
+            if (name.StartsWith("oggy"))
+            {
+                Console.WriteLine($"Need to remove {name}!");
+                names.Remove(name);
+            }
         }
     }
-  }
-  static bool OggyIsRemoved(List<string> names)
-  {
-    return names.Find(x => x.Contains("oggy")) == null;
-  }
-  static int Main()
-  {
-    var names = new List<string>
-      { "nobita", "bheem", "oggy", "oggy cockroach", "ninja" };
-    RemoveOggy(names);
-    if(OggyIsRemoved(names)) {
-      Console.WriteLine("Passed!");
-      return 0;
-    } else {
-      Console.WriteLine("Failed!!");
-      return 1;
+    static bool OggyIsRemoved(List<string> names)
+    {
+        return names.Find(x => x.Contains("oggy")) == null;
     }
-  }
+    static int Main()
+    {
+        var names = new List<string>
+      { "nobita", "bheem", "oggy", "oggy cockroach", "ninja" };
+        RemoveOggy(names);
+        if (OggyIsRemoved(names))
+        {
+            Console.WriteLine("Passed!");
+            return 0;
+        }
+        else
+        {
+            Console.WriteLine("Failed!!");
+            return 1;
+        }
+    }
 }

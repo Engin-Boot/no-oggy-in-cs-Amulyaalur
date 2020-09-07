@@ -1,12 +1,12 @@
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 class NoOggyChecker
 {
     static void RemoveOggy(List<string> names)
     {
-        List<string> Names = new List<string>(names);
-        foreach (var name in Names)
+       
+        foreach (var name in names.ToList())
         {
             if (name.StartsWith("oggy"))
             {
